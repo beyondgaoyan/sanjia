@@ -1,473 +1,304 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="Keywords" content="{$keywords}" />
-<meta name="Description" content="{$description}" />
-<!-- TemplateBeginEditable name="doctitle" -->
-<title>{$page_title}</title>
-<!-- TemplateEndEditable -->
-<!-- TemplateBeginEditable name="head" -->
-<!-- TemplateEndEditable -->
-<link rel="shortcut icon" href="favicon.ico" />
-<link rel="icon" href="animated_favicon.gif" type="image/gif" />
-<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
-<link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
-{* 包含脚本文件 *}
-{insert_scripts files='common.js,index.js'}
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link type="text/css" href="index_files/index.css" rel="stylesheet">
+<script type="text/javascript" src="index_files/move2.js"></script>
+<script type="text/javascript" src="index_files/index.js"></script>
+<meta name="keywords" content="上海费登斯投资有限公司">
+<meta name="description" content="上海费登斯投资有限公司">
+<title>上海费登斯投资有限公司</title>
 </head>
-<body>
-<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
-<div class="blank"></div>
-<div class="block clearfix">
-  <!--left start-->
-  <div class="AreaL">
-    <!--站内公告 start-->
-    <div class="box">
-     <div class="box_1">
-      <h3><span>{$lang.shop_notice}</span></h3>
-      <div class="boxCenterList RelaArticle">
-        {$shop_notice}
-      </div>
-     </div>
-    </div>
-    <div class="blank5"></div>
-    <!--站内公告 end-->
-  <!-- TemplateBeginEditable name="左边区域" -->
-<!-- #BeginLibraryItem "/library/cart.lbi" -->
-
-{insert_scripts files='transport.js'}
-<div class="cart" id="ECS_CARTINFO">
- {insert name='cart_info'}
-</div>
-<div class="blank5"></div>
-
- <!-- #EndLibraryItem -->
-<!-- #BeginLibraryItem "/library/category_tree.lbi" -->
-
-<div class="box">
- <div class="box_1">
-  <div id="category_tree">
-    <!--{foreach from=$categories item=cat}-->
-     <dl>
-     <dt><a href="{$cat.url}">{$cat.name|escape:html}</a></dt>
-     <!--{foreach from=$cat.cat_id item=child}-->
-     <dd><a href="{$child.url}">{$child.name|escape:html}</a></dd>
-       <!--{foreach from=$child.cat_id item=childer}-->
-       <dd>&nbsp;&nbsp;<a href="{$childer.url}">{$childer.name|escape:html}</a></dd>
-       <!--{/foreach}-->
-     <!--{/foreach}-->
-       
-       </dl>
-    <!--{/foreach}--> 
-  </div>
- </div>
-</div>
-<div class="blank5"></div>
-
- <!-- #EndLibraryItem -->
-<!-- #BeginLibraryItem "/library/top10.lbi" -->
-
-<div class="box">
- <div class="box_2">
-  <div class="top10Tit"></div>
-  <div class="top10List clearfix">
-  <!-- {foreach name=top_goods from=$top_goods item=goods}-->
-  <ul class="clearfix">
-	<img src="../images/top_{$smarty.foreach.top_goods.iteration}.gif" class="iteration" />
-	<!-- {if $smarty.foreach.top_goods.iteration<4}-->
-      <li class="topimg">
-      <a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="samllimg" /></a>
-      </li>
-	<!-- {/if} -->		
-      <li {if $smarty.foreach.top_goods.iteration<4}class="iteration1"{/if}>
-      <a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name}</a><br />
-      {$lang.shop_price}<font class="f1">{$goods.price}</font><br />
-      </li>
-    </ul>
-  <!-- {/foreach} -->
-  </div>
- </div>
-</div>
-<div class="blank5"></div>
-
- <!-- #EndLibraryItem -->
-<!-- #BeginLibraryItem "/library/promotion_info.lbi" -->
-
-<!-- {if $promotion_info} -->
-<!-- 促销信息 -->
-<div class="box">
- <div class="box_1">
-  <h3><span>{$lang.promotion_info}</span></h3>
-  <div class="boxCenterList RelaArticle">
-    <!-- {foreach from=$promotion_info item=item key=key} -->
-    <!-- {if $item.type eq "snatch"} -->
-    <a href="snatch.php" title="{$lang.$item.type}">{$lang.snatch_promotion}</a>
-    <!-- {elseif $item.type eq "group_buy"} -->
-    <a href="group_buy.php" title="{$lang.$item.type}">{$lang.group_promotion}</a>
-    <!-- {elseif $item.type eq "auction"} -->
-    <a href="auction.php" title="{$lang.$item.type}">{$lang.auction_promotion}</a>
-    <!-- {elseif $item.type eq "favourable"} -->
-    <a href="activity.php" title="{$lang.$item.type}">{$lang.favourable_promotion}</a>
-    <!-- {/if} -->
-    <a href="{$item.url}" title="{$lang.$item.type} {$item.act_name}{$item.time}" style="background:none; padding-left:0px;">{$item.act_name}</a><br />
-    <!-- {/foreach} -->
-  </div>
- </div>
-</div>
-<div class="blank5"></div>
-<!-- {/if} -->
- <!-- #EndLibraryItem -->
-<!-- #BeginLibraryItem "/library/order_query.lbi" -->
-
-<!--{if empty($order_query)}-->
-<script>var invalid_order_sn = "{$lang.invalid_order_sn}"</script>
-<div class="box">
- <div class="box_1">
-  <h3><span>{$lang.order_query}</span></h3>
-  <div class="boxCenterList">
-    <form name="ecsOrderQuery">
-    <input type="text" name="order_sn" class="inputBg" /><br />
-    <div class="blank5"></div>
-    <input type="button" value="{$lang.query_order}" class="bnt_blue_2" onclick="orderQuery()" />
-    </form>
-    <div id="ECS_ORDER_QUERY" style="margin-top:8px;">
-      <!--{else}-->
-      <!--{if $order_query.user_id}-->
-<b>{$lang.order_number}：</b><a href="user.php?act=order_detail&order_id={$order_query.order_id}" class="f6">{$order_query.order_sn}</a><br>
-  <!--{else}-->
-<b>{$lang.order_number}：</b>{$order_query.order_sn}<br>
-  <!--{/if}-->
-<b>{$lang.order_status}：</b><br><font class="f1">{$order_query.order_status}</font><br>
-  <!--{if $order_query.invoice_no }-->
-<b>{$lang.consignment}：</b>{$order_query.invoice_no}<br>
-  <!--{/if}-->
-      {if $order_query.shipping_date}：{$lang.shipping_date} {$order_query.shipping_date}<br>
-  <!--{/if}-->
-  <!--{/if}-->
-    </div>
-  </div>
- </div>
-</div>
-<div class="blank5"></div>
-
- <!-- #EndLibraryItem -->
-<!-- #BeginLibraryItem "/library/invoice_query.lbi" -->
-
-<!--{if $invoice_list}-->
-<style type="text/css">
-.boxCenterList form{display:inline;}
-.boxCenterList form a{color:#404040; text-decoration:underline;}
-</style>
-<div class="box">
- <div class="box_1">
-  <h3><span>{$lang.shipping_query}</span></h3>
-  <div class="boxCenterList">
-    <!-- 发货单查询{foreach from=$invoice_list item=invoice} -->
-   {$lang.order_number} {$invoice.order_sn}<br />
-   {$lang.consignment} {$invoice.invoice_no}
-   <div class="blank"></div>
-   <!-- 结束发货单查询{/foreach}-->
-  </div>
- </div>
-</div>
-<div class="blank5"></div>
-<!-- {/if} -->
- <!-- #EndLibraryItem -->
-<!-- #BeginLibraryItem "/library/vote_list.lbi" -->
-
-{insert name='vote'}
- <!-- #EndLibraryItem -->
-<!-- #BeginLibraryItem "/library/email_list.lbi" -->
-
-<div class="box">
- <div class="box_1">
-  <h3><span>{$lang.email_subscribe}</span></h3>
-  <div class="boxCenterList RelaArticle">
-    <input type="text" id="user_email" class="inputBg" /><br />
-    <div class="blank5"></div>
-    <input type="button" class="bnt_blue" value="{$lang.email_list_ok}" onclick="add_email_list();" />
-    <input type="button" class="bnt_bonus"  value="{$lang.email_list_cancel}" onclick="cancel_email_list();" />
-  </div>
- </div>
-</div>
-<div class="blank5"></div>
-<script type="text/javascript">
-var email = document.getElementById('user_email');
-function add_email_list()
-{
-  if (check_email())
-  {
-    Ajax.call('user.php?act=email_list&job=add&email=' + email.value, '', rep_add_email_list, 'GET', 'TEXT');
-  }
-}
-function rep_add_email_list(text)
-{
-  alert(text);
-}
-function cancel_email_list()
-{
-  if (check_email())
-  {
-    Ajax.call('user.php?act=email_list&job=del&email=' + email.value, '', rep_cancel_email_list, 'GET', 'TEXT');
-  }
-}
-function rep_cancel_email_list(text)
-{
-  alert(text);
-}
-function check_email()
-{
-  if (Utils.isEmail(email.value))
-  {
-    return true;
-  }
-  else
-  {
-    alert('{$lang.email_invalid}');
-    return false;
-  }
-}
-</script>
-
- <!-- #EndLibraryItem -->
-<!-- TemplateEndEditable -->
-
-  </div>
-  <!--left end-->
-  <!--right start-->
-  <div class="AreaR">
-   <!--焦点图和站内快讯 START-->
-    <div class="box clearfix">
-     <div class="box_1 clearfix">
-       <div class="f_l" id="focus">
-       <!-- #BeginLibraryItem "/library/index_ad.lbi" --><!-- #EndLibraryItem -->
-       </div>
-       <!--news-->
-       <div id="mallNews" class="f_r">
-        <div class="NewsTit"></div>
-        <div class="NewsList tc">
-         <!-- TemplateBeginEditable name="站内快讯上广告位（宽：210px）" -->
-<!-- TemplateEndEditable -->
-        <!-- #BeginLibraryItem "/library/new_articles.lbi" --><!-- #EndLibraryItem -->
+<body style="background-image: url(index_files/body_bg.jpg); background-attachment: scroll; background-position: center center;background-repeat: repeat-y">
+<div class="header_bg">
+   <div class="header">
+      <div class="logo">
+         <img src="index_files/logo.png" alt="" height="45" width="">
         </div>
-       </div>
-       <!--news end-->
-     </div>
-    </div>
-    <div class="blank5"></div>
-   <!--焦点图和站内快讯 END-->
-   <!--今日特价，品牌 start-->
-    <div class="clearfix">
-      <!--特价-->
-      <!-- #BeginLibraryItem "/library/recommend_promotion.lbi" --><!-- #EndLibraryItem -->
-      <!--品牌-->
-      <div class="box f_r brandsIe6">
-       <div class="box_1 clearfix" id="brands">
-        <!-- #BeginLibraryItem "/library/brands.lbi" --><!-- #EndLibraryItem -->
-       </div>
-      </div>
-    </div>
-    <div class="blank5"></div>
-   <!-- TemplateBeginEditable name="右边主区域" -->
-<!-- #BeginLibraryItem "/library/recommend_best.lbi" -->
+        <div class="logo_right">
+                <div class="top_list">
+                    <a onclick="var strHref=window.location.href;this.style.behavior='url(#default#homepage)';
+this.setHomePage('http://www.evcsfx.com');" class="top_list_a1"><span>加入收藏</span></a>
+                    <a onclick="var strHref=window.location.href;this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.evcsfx.com');" href="javascript:;" class="top_list_a2"><span>设为首页</span></a>
+                    <div class="language" id="language">
+                     <span>中文简体</span>
 
-<!-- {if $best_goods} -->
-<!-- {if $cat_rec_sign neq 1} -->
-<div class="box">
-<div class="box_2 centerPadd">
-  <div class="itemTit" id="itemBest">
-      {if $cat_rec[1]}
-      <h2><a href="javascript:void(0)" onclick="change_tab_style('itemBest', 'h2', this);get_cat_recommend(1, 0);">{$lang.all_goods}</a></h2>
-      {foreach from=$cat_rec[1] item=rec_data}
-      <h2 class="h2bg"><a href="javascript:void(0)" onclick="change_tab_style('itemBest', 'h2', this);get_cat_recommend(1, {$rec_data.cat_id})">{$rec_data.cat_name}</a></h2>
-      {/foreach}
-      {/if}
-  </div>
-  <div id="show_best_area" class="clearfix goodsBox">
-  <!-- {/if} -->
-  <!--{foreach from=$best_goods item=goods}-->
-  <div class="goodsItem">
-         <span class="best"></span>
-           <a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg" /></a><br />
-           <p><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></p>
-           <font class="f1">
-           <!-- {if $goods.promote_price neq ""} -->
-          {$goods.promote_price}
-          <!-- {else}-->
-          {$goods.shop_price}
-          <!--{/if}-->
-           </font>
+                    </div>
+                </div>
+                <div class="index_nav" id="index_nav">
+                    <ul>
+                        <li>
+                            <a href="http://www.evcsfx.com/" class="a_index_nav index_a">首页</a>                        </li>
+                        <li>
+                            <a href="http://www.evcsfx.com/about.asp?channel=1&amp;id=37" class="index_a">走进</a>
+                            <div style="display: none;" class="index_nav2">
+                     
+                     
+                     <a href="http://www.evcsfx.com/about.asp?channel=1&amp;id=37">为什么选择我们</a>
+                     
+                     
+                     <a href="http://www.evcsfx.com/about.asp?channel=1&amp;id=38">资金安全</a>
+                     
+                     
+                     <a href="http://www.evcsfx.com/about.asp?channel=1&amp;id=39">我们的技术优势</a>
+                     
+                     
+                     <a href="http://www.evcsfx.com/about.asp?channel=1&amp;id=40">直通式交易经纪商</a>
+                     
+                     
+                     <a href="http://www.evcsfx.com/about.asp?channel=1&amp;id=294">联系我们</a>
+                     
+                            </div>
+                      </li>
+                        <li>
+                           <a href="http://www.evcsfx.com/about2.asp?id=279&amp;channel=2" class="index_a">产品与交易</a>
+                            <div style="display: none;" class="index_nav2">
+                              <a href="http://www.evcsfx.com/about2.asp?id=279&amp;channel=2">交易产品</a>
+                              <a href="http://www.evcsfx.com/about2.asp?id=282&amp;channel=5">交易系统</a>
+                              <a href="http://www.evcsfx.com/about.asp?id=286&amp;channel=6" style="border-bottom:none;">交易账户</a>                            </div>
+                      </li>
+                        <li>
+                           <a href="http://www.evcsfx.com/account.asp" class="index_a">服务与支持</a>
+                            <div style="display: none;" class="index_nav2">
+                              <a href="http://www.evcsfx.com/account.asp">开立账户</a>
+                              
+                     
+                     <a href="http://www.evcsfx.com/about.asp?channel=7&amp;id=289">账户入金</a>
+                     
+                     
+                     <a href="http://www.evcsfx.com/about.asp?channel=7&amp;id=290">常见问题</a>
+                     
+                     
+                     <a href="http://www.evcsfx.com/about.asp?channel=7&amp;id=291">风险声明</a>
+                     
+                     
+                     <a href="http://www.evcsfx.com/about.asp?channel=7&amp;id=292">隐私保护</a>
+                     
+                     
+                     <a href="http://www.evcsfx.com/about.asp?channel=7&amp;id=293">个性化服务</a>
+                     
+                     
+                     <a href="http://www.evcsfx.com/about.asp?channel=7&amp;id=295">取款申请书</a>
+                     
+                            </div>
+                      </li>
+                        <li>
+                           <a href="http://www.evcsfx.com/newslist.asp?id=47&amp;channel=10" class="index_a">资讯中心</a>
+                     
+                            <div style="display: none;" class="index_nav2">
+            <a href="http://www.evcsfx.com/newslist.asp?id=47&amp;channel=10">交易资讯</a><a href="http://www.evcsfx.com/newslist.asp?id=48&amp;channel=10">财经新闻</a>
+                            </div>
+                      </li>
+                        <li>
+                           <a href="http://www.evcsfx.com/about.asp?channel=19&amp;id=251" class="index_a">合作伙伴</a>
+                            <div style="display: none;" class="index_nav2">
+                              
+                     
+                     <a href="http://www.evcsfx.com/about.asp?channel=19&amp;id=251">如何成为合作伙伴</a>
+                     
+                     
+                     <a href="http://www.evcsfx.com/about.asp?channel=19&amp;id=252">介绍经纪人(IB)</a>
+                     
+                     
+                     <a href="http://www.evcsfx.com/about.asp?channel=19&amp;id=253">资产管理人</a>
+                     
+                     
+                     <a href="http://www.evcsfx.com/about.asp?channel=19&amp;id=254">白标合伙人</a>
+                     
+                            </div>
+                      </li>
+                    </ul>
+                </div>
         </div>
-  <!--{/foreach}-->
-  <div class="more"><a href="../search.php?intro=best"><img src="images/more.gif" /></a></div>
-  <!-- {if $cat_rec_sign neq 1} -->
-  </div>
+    </div>
 </div>
-</div>
-<div class="blank5"></div>
-  <!-- {/if} -->
-<!-- {/if} -->
 
- <!-- #EndLibraryItem -->
-<!-- #BeginLibraryItem "/library/recommend_new.lbi" -->
-
-<!-- {if $new_goods} -->
-<!-- {if $cat_rec_sign neq 1} -->
-<div class="box">
-<div class="box_2 centerPadd">
-  <div class="itemTit New" id="itemNew">
-      {if $cat_rec[2]}
-      <h2><a href="javascript:void(0)" onclick="change_tab_style('itemNew', 'h2', this);get_cat_recommend(2, 0);">{$lang.all_goods}</a></h2>
-      {foreach from=$cat_rec[2] item=rec_data}
-      <h2 class="h2bg"><a href="javascript:void(0)" onclick="change_tab_style('itemNew', 'h2', this);get_cat_recommend(2, {$rec_data.cat_id})">{$rec_data.cat_name}</a></h2>
-      {/foreach}
-      {/if}
-  </div>
-  <div id="show_new_area" class="clearfix goodsBox">
-  <!-- {/if} -->
-  <!--{foreach from=$new_goods item=goods}-->
-  <div class="goodsItem">
-         <span class="news"></span>
-           <a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg" /></a><br />
-           <p><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></p>
-           <font class="f1">
-           <!-- {if $goods.promote_price neq ""} -->
-          {$goods.promote_price}
-          <!-- {else}-->
-          {$goods.shop_price}
-          <!--{/if}-->
-           </font>
+<div class="banner_bg">
+   <div class="banner">
+      <div class="banner_top" id="banner_top">
+         <ul style="width: 3960px; left: -1980px;" class="banner_ul" id="banner_ul">
+               <li><a href="#"><img src="index_files/1.jpg" alt="" height="380" width="990"></a></li>
+               <li><a href="#"><img src="index_files/2.jpg" alt="" height="380" width="990"></a></li>
+               <li><a href="#"><img src="index_files/3.jpg" alt="" height="380" width="990"></a></li>
+               <li><a href="#"><img src="index_files/banner_img1.jpg" alt="" height="380" width="990"></a></li>
+            </ul>
+            <div class="banner_nav" id="banner_nav">
+               <span class=""></span>
+               <span class=""></span>
+               <span class="banenr_nav_hover"></span>
+               <span class=""></span>
+            </div>
         </div>
-  <!--{/foreach}-->
-  <div class="more"><a href="../search.php?intro=new"><img src="images/more.gif" /></a></div>
-  <!-- {if $cat_rec_sign neq 1} -->
-  </div>
-</div>
-</div>
-<div class="blank5"></div>
-  <!-- {/if} -->
-<!-- {/if} -->
-
- <!-- #EndLibraryItem -->
-<!-- #BeginLibraryItem "/library/recommend_hot.lbi" -->
-
-<!-- {if $hot_goods} -->
-<!-- {if $cat_rec_sign neq 1} -->
-<div class="box">
-<div class="box_2 centerPadd">
-  <div class="itemTit Hot" id="itemHot">
-      {if $cat_rec[3]}
-      <h2><a href="javascript:void(0)" onclick="change_tab_style('itemHot', 'h2', this);get_cat_recommend(3, 0);">{$lang.all_goods}</a></h2>
-      {foreach from=$cat_rec[3] item=rec_data}
-      <h2 class="h2bg"><a href="javascript:void(0)" onclick="change_tab_style('itemHot', 'h2', this);get_cat_recommend(3, {$rec_data.cat_id})">{$rec_data.cat_name}</a></h2>
-      {/foreach}
-      {/if}
-  </div>
-  <div id="show_hot_area" class="clearfix goodsBox">
-  <!-- {/if} -->
-  <!--{foreach from=$hot_goods item=goods}-->
-  <div class="goodsItem">
-         <span class="hot"></span>
-           <a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg" /></a><br />
-           <p><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></p>
-           <font class="f1">
-           <!-- {if $goods.promote_price neq ""} -->
-          {$goods.promote_price}
-          <!-- {else}-->
-          {$goods.shop_price}
-          <!--{/if}-->
-           </font>
+        <div class="banner_bottom">
+         <div class="banner_bottom_left">
+                    <span class="banner_bottom_title">快速链接</span>
+                    <a href="http://www.evcsfx.com/account.asp" style="background:url(index_files/middle_nav1_bg.jpg) 0 0 no-repeat;">真实账户注册</a>
+                    <a href="http://www.evcsfx.com/account_ml.asp" style="background:url(index_files/middle_nav1_bg.jpg) 0 -88px no-repeat;">模拟账户注册</a>
+                    <a href="http://www.evcsfx.com/about2.asp?id=282&amp;channel=5" style="background:url(index_files/middle_nav1_bg.jpg) 0 -176px no-repeat;">软件下载</a>
+                    <a href="http://www.evcsfx.com/about.asp?channel=1&amp;id=294" style="background:url(index_files/middle_nav1_bg.jpg) 0 -264px no-repeat;">联系我们</a>
+            </div>
+            <div class="banner_bottom_right">
+                    <span class="banner_bottom_title">交易系统</span>
+                    <a href="http://www.evcsfx.com/about.asp?id=282&amp;channel=5" style="border-top:none;">MetaTrader4</a>
+                    <a href="http://www.evcsfx.com/about.asp?id=283&amp;channel=5" style="border-right:none;border-top:none;border-left:none;">MultiTerminal - MT4</a>
+                    <a href="http://www.evcsfx.com/about.asp?id=284&amp;channel=5" style="border-right:none;border-top:none;border-bottom:none;">J-Trader</a>
+                    <a href="http://www.evcsfx.com/about.asp?id=285&amp;channel=5" style="border-right:none;border-top:none;">CQG Trader</a>
+            </div>
         </div>
-  <!--{/foreach}-->
-  <div class="more"><a href="../search.php?intro=hot"><img src="images/more.gif" /></a></div>
-  <!-- {if $cat_rec_sign neq 1} -->
-  </div>
+    </div>
 </div>
-</div>
-<div class="blank5"></div>
-  <!-- {/if} -->
-<!-- {/if} -->
+<div style="height:30px; text-align:center;"><iframe src="index_files/shuju.html" scrolling="no" frameborder="0" height="30" width="970"></iframe></div>
 
- <!-- #EndLibraryItem -->
-<!-- #BeginLibraryItem "/library/auction.lbi" -->
-
-<!-- {if $auction_list} -->
-<div class="box">
- <div class="box_1">
-  <h3><span>{$lang.auction_goods}</span><a href="auction.php"><img src="../images/more.gif"></a></h3>
-    <div class="centerPadd">
-    <div class="clearfix goodsBox" style="border:none;">
-      <!--{foreach from=$auction_list item=auction}-->
-      <div class="goodsItem">
-           <a href="{$auction.url}"><img src="{$auction.thumb}" alt="{$auction.goods_name|escape:html}" class="goodsimg" /></a><br />
-           <p><a href="{$auction.url}" title="{$auction.goods_name|escape:html}">{$auction.short_style_name|escape:html}</a></p>
-           <font class="shop_s">{$auction.formated_start_price}</font>
+<div class="index_lunbo_bg">
+   <div class="index_lunbo" id="index_lunbo">
+      <span title="" id="index_prev"></span>
+        <div class="index_lunbo_out">
+         <ul style="width: 1794px; left: -897px;" id="index_lunbo_ul">
+               <li style="border-top:2px solid #eb7d2a;border-bottom:1px solid #eee;">
+                  <span style="color:#eb7d2a">外汇 Forex</span>
+                    <a href="http://www.evcsfx.com/about2.asp?id=279&amp;channel=2"><img src="index_files/index_lunboimg1.jpg" alt="" height="156" border="0" width="290"></a> </li>
+               <li style="border-top:2px solid #2aabe0;border-bottom:1px solid #eee;">
+                  <span style="color:#2aabe0">期货 Futrues</span>
+                    <a href="http://www.evcsfx.com/about.asp?id=281&amp;channel=2"><img src="index_files/index_lunboimg2.jpg" alt="" height="156" border="0" width="290"></a> </li>
+               <li style="border-top:2px solid #004f9c;border-bottom:1px solid #eee;">
+                  <span style="color:#004f9c">能源 Energy</span>
+                    <a href="http://www.evcsfx.com/about.asp?id=280&amp;channel=2"><img src="index_files/index_lunboimg3.jpg" alt="" height="156" border="0" width="290"></a> </li>
+               <li style="border-top:2px solid #eb7d2a;border-bottom:1px solid #eee;">
+                  <span style="color:#eb7d2a">外汇 Forex</span>
+                    <a href="http://www.evcsfx.com/about2.asp?id=279&amp;channel=2"><img src="index_files/index_lunboimg1.jpg" alt="" height="156" border="0" width="290"></a> </li>
+               <li style="border-top:2px solid #2aabe0;border-bottom:1px solid #eee;">
+                  <span style="color:#2aabe0">期货 Futrues</span>
+                    <a href="http://www.evcsfx.com/about.asp?id=281&amp;channel=2"><img src="index_files/index_lunboimg2.jpg" alt="" height="156" border="0" width="290"></a> </li>
+               <li style="border-top:2px solid #004f9c;border-bottom:1px solid #eee;">
+                  <span style="color:#004f9c">能源 Energy</span>
+                    <a href="http://www.evcsfx.com/about.asp?id=280&amp;channel=2"><img src="index_files/index_lunboimg3.jpg" alt="" height="156" border="0" width="290"></a> </li>
+            </ul>
         </div>
-      <!--{/foreach}-->
+      <span title="" id="index_next"></span>
+    </div>
+</div>
+<div class="index_main_bg">
+   <div class="index_main">
+      <div class="index_main1">
+         <span>使用MT4外汇交易 享受专业金融服务</span>
+         <a href="http://www.evcsfx.com/about.asp?channel=7&amp;id=293"><img src="index_files/hezuo_img0.jpg" alt="" height="154" border="0" width="323"></a> </div>
+      <div class="index_main2">
+         <p>财经新闻</p>
+            <ul>
+               
+               <li>
+               <a href="http://www.evcsfx.com/news.asp?id=48&amp;channel=10&amp;newsid=277" target="_blank">决策分析：欧美货币政策趋于分化 美债..</a><b style="font-weight:normal;">2014-6-15</b></li>
+               
+               <li>
+               <a href="http://www.evcsfx.com/news.asp?id=48&amp;channel=10&amp;newsid=276" target="_blank">Kathy Lien：如何在低波动的..</a><b style="font-weight:normal;">2014-6-15</b></li>
+               
+               <li>
+               <a href="http://www.evcsfx.com/news.asp?id=48&amp;channel=10&amp;newsid=275" target="_blank">资金链断裂引爆金属融资炸弹 套利本质..</a><b style="font-weight:normal;">2014-6-15</b></li>
+               
+               <li>
+               <a href="http://www.evcsfx.com/news.asp?id=48&amp;channel=10&amp;newsid=272" target="_blank">花旗银行：政策会议将至 欧央行会如何..</a><b style="font-weight:normal;">2014-6-15</b></li>
+               
+               <li>
+               <a href="http://www.evcsfx.com/news.asp?id=48&amp;channel=10&amp;newsid=271" target="_blank">法国农贷：欧元投机空头接近数月高点 ..</a><b style="font-weight:normal;">2014-6-15</b></li>
+               
+               <li>
+               <a href="http://www.evcsfx.com/news.asp?id=48&amp;channel=10&amp;newsid=270" target="_blank">欧元自四个月低位反弹 北欧联合与瑞穗..</a><b style="font-weight:normal;">2014-6-15</b></li>
+            
+         
+               
+            </ul>
+        
+        </div>
+      <div class="index_main2">
+         <p>交易资讯</p>
+            <ul>
+               
+               <li><a href="http://www.evcsfx.com/news.asp?id=47&amp;channel=10&amp;newsid=278" target="_blank">美银美林：欧洲央行决议后的G10货币..</a><b style="font-weight:normal;">2014-6-15</b></li>
+               
+               <li><a href="http://www.evcsfx.com/news.asp?id=47&amp;channel=10&amp;newsid=266" target="_blank">BBH：美元/日元亚盘重返102 但..</a><b style="font-weight:normal;">2014-6-15</b></li>
+               
+               <li><a href="http://www.evcsfx.com/news.asp?id=47&amp;channel=10&amp;newsid=265" target="_blank">人民币收盘涨幅收窄 后市料继续测试6..</a><b style="font-weight:normal;">2014-6-15</b></li>
+               
+               <li><a href="http://www.evcsfx.com/news.asp?id=47&amp;channel=10&amp;newsid=264" target="_blank">资金链断裂引爆金属融资炸弹 套利本质..</a><b style="font-weight:normal;">2014-6-15</b></li>
+               
+               <li><a href="http://www.evcsfx.com/news.asp?id=47&amp;channel=10&amp;newsid=263" target="_blank">欧银TLTRO乱象：银行拿资金套利</a><b style="font-weight:normal;">2014-6-15</b></li>
+               
+               <li><a href="http://www.evcsfx.com/news.asp?id=47&amp;channel=10&amp;newsid=262" target="_blank">瑞银集团：最新欧、镑、日、澳短线技术..</a><b style="font-weight:normal;">2014-6-15</b></li>
+                        </ul>
+        </div>
+    </div>
+</div>
+<div class="hezuo_bg">
+   <div class="hezuo">
+    <div class="hezuo_left">
+      <span>合作伙伴</span>
+      <b>Partners</b>
+    </div>
+    <div class="hezuo_out">
+      <ul style="width: 1336px; left: -335px;" id="hezuo_ul">
+         <li><img src="index_files/hezuo_img1.jpg" alt="" height="57" width="160"></li>
+         <li><img src="index_files/hezuo_img2.jpg" alt="" height="57" width="160"></li>
+         <li><img src="index_files/hezuo_img3.jpg" alt="" height="57" width="160"></li>
+         <li><img src="index_files/hezuo_img4.jpg" alt="" height="57" width="160"></li>
+         <li><img src="index_files/hezuo_img1.jpg" alt="" height="57" width="160"></li>
+         <li><img src="index_files/hezuo_img2.jpg" alt="" height="57" width="160"></li>
+         <li><img src="index_files/hezuo_img3.jpg" alt="" height="57" width="160"></li>
+         <li><img src="index_files/hezuo_img4.jpg" alt="" height="57" width="160"></li>
+        </ul>
     </div>
     </div>
- </div>
 </div>
-<div class="blank5"></div>
-<!-- {/if} -->
- <!-- #EndLibraryItem -->
-<!-- #BeginLibraryItem "/library/group_buy.lbi" -->
+<div class="footer_bg">
+   <div class="footer">
+      <dl>
+               <dd><span style="background:#004f9c;">New Zealand Offices</span><a href="" style="background:#bbbbbb;color:#333;"> 97a Grafton Road,Grafton,Auckland,1010,New Zealand</a></dd>
+               <dd style="float:right;"><span style="background:#e86201;"><img src="index_files/footer_top_bg.jpg" alt="" height="20" width="26">+64 (0)9.889.2541</span><a href="" style="background:#004f9c;color:#fff;"> Email: accounts@evcfx.com</a></dd>
+               <dd><span style="background:#004f9c;">驻中国办事处</span><a href="" style="background:#bbbbbb;color:#333;">上海费登斯投资咨询有限公司</a></dd>
+               <dd style="float:right;"><span style="background:#e86201;"><img src="index_files/footer_top_bg.jpg" alt="" height="20" width="26">+862161682190</span><a href="" style="background:#004f9c;color:#fff;">Email: service@evcfx.com</a></dd>
+        </dl>
+        <ul class="footer_ul">
+         <li>
+               <span>客户服务</span>
+               <a href="http://www.evcsfx.com/about.asp?channel=7&amp;id=292">直通式交易经纪商</a>
+               <a href="http://www.evcsfx.com/about.asp?channel=7&amp;id=289">账户入金</a>
+               <a href="http://www.evcsfx.com/about2.asp?id=282&amp;channel=5">交易软件下载</a>
+               <a href="http://www.evcsfx.com/about.asp?channel=19&amp;id=251">如何成为合作伙伴</a>
+            </li>
+         <li>
+               <span>交易软件</span>
+               <a href="http://www.evcsfx.com/about.asp?id=282&amp;channel=5">MetaTrader4</a>
+               <a href="http://www.evcsfx.com/about.asp?id=283&amp;channel=5">MultiTerminal - MT4</a>
+               <a href="http://www.evcsfx.com/about.asp?id=284&amp;channel=5">J-Trader</a>
+               <a href="http://www.evcsfx.com/about.asp?id=285&amp;channel=5">CQG Trader</a>
+               
+            </li>
+         <li>
+               <span>走进</span>
+               <a href="http://www.evcsfx.com/about.asp?id=37&amp;channel=1">为什么选择我们</a>
+               <a href="http://www.evcsfx.com/about.asp?id=38&amp;channel=1">资金安全</a>
+               <a href="http://www.evcsfx.com/about.asp?id=39&amp;channel=1">我们的技术优势</a>
+               <a href="http://www.evcsfx.com/about.asp?id=40&amp;channel=1">直通式交易经纪商</a>
+            <a href="http://www.evcsfx.com/about.asp?id=294&amp;channel=1">联系我们</a>
+            </li>
+         <li>
+               <span>账户</span>
+               <a href="http://www.evcsfx.com/account.asp">开立真实账户</a>
+               <a href="http://www.evcsfx.com/account_ml.asp">开立模拟账户</a>
+            <a href="http://www.evcsfx.com/about.asp?id=286&amp;channel=6">标准账户</a>
+            <a href="http://www.evcsfx.com/about.asp?id=287&amp;channel=6">白金账户</a>
+            <a href="http://www.evcsfx.com/about.asp?id=288&amp;channel=6">期货账户</a>
+               
+            </li>
+        </ul>
+    <div class="footer_logo">
+      <a href="http://www.evcsfx.com/about.asp?channel=7&amp;id=291" class="footer_logo1">风险提示</a>
+      <a href="http://www.evcsfx.com/about.asp?channel=7&amp;id=292" class="footer_logo2">隐私说明</a>
+        <a href="" class="footer_logo3"></a>
+        <a href="" class="footer_logo4"></a>
+        <a href="" class="footer_logo5"></a>
+        <a href="" class="footer_logo6"></a>
+    </div>
+    </div>
+</div>
 
-<!-- {if $group_buy_goods} -->
-<div class="box">
- <div class="box_1">
-  <h3><span>{$lang.group_buy_goods}</span><a href="group_buy.php"><img src="../images/more.gif"></a></h3>
-    <div class="centerPadd">
-    <div class="clearfix goodsBox" style="border:none;">
-      <!--{foreach from=$group_buy_goods item=goods}-->
-      <div class="goodsItem">
-           <a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.goods_name|escape:html}" class="goodsimg" /></a><br />
-					 <p><a href="{$goods.url}" title="{$goods.goods_name|escape:html}">{$goods.short_style_name|escape:html}</a></p>
-           <font class="shop_s">{$goods.last_price}</font>
-        </div>
-      <!--{/foreach}-->
-    </div>
-    </div>
- </div>
-</div>
-<div class="blank5"></div>
-<!-- {/if} -->
- <!-- #EndLibraryItem -->
-<!-- TemplateEndEditable -->
-  </div>
-  <!--right end-->
-</div>
-<div class="blank5"></div>
-<!--帮助-->
-<div class="block">
-  <div class="box">
-   <div class="helpTitBg clearfix">
-    <!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem -->
-   </div>
-  </div>
-</div>
-<div class="blank"></div>
-<!--帮助-->
-<!--友情链接 start-->
-<!--{if $img_links  or $txt_links }-->
-<div id="bottomNav" class="box">
- <div class="box_1">
-  <div class="links clearfix">
-    <!--开始图片类型的友情链接{foreach from=$img_links item=link}-->
-    <a href="{$link.url}" target="_blank" title="{$link.name}"><img src="{$link.logo}" alt="{$link.name}" border="0" /></a>
-    <!--结束图片类型的友情链接{/foreach}-->
-    <!-- {if $txt_links} -->
-    <!--开始文字类型的友情链接{foreach from=$txt_links item=link}-->
-    [<a href="{$link.url}" target="_blank" title="{$link.name}">{$link.name}</a>]
-    <!--结束文字类型的友情链接{/foreach}-->
-    <!-- {/if} -->
-  </div>
- </div>
-</div>
-<!--{/if}-->
-<!--友情链接 end-->
-<div class="blank"></div>
-<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
-</body>
-</html>
+
+</body></html>

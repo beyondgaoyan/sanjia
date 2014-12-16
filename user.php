@@ -21,7 +21,7 @@ require(dirname(__FILE__) . '/includes/init.php');
 require_once(ROOT_PATH . 'languages/' .$_CFG['lang']. '/user.php');
 
 $user_id = $_SESSION['user_id'];
-$action  = isset($_REQUEST['act']) ? trim($_REQUEST['act']) : 'default';
+$action  = isset($_REQUEST['act']) ? trim($_REQUEST['act']) : 'profile';
 
 $affiliate = unserialize($GLOBALS['_CFG']['affiliate']);
 $smarty->assign('affiliate', $affiliate);
@@ -33,7 +33,7 @@ $not_login_arr =
 array('login','act_login','register','act_register','act_edit_password','get_password','send_pwd_email','password', 'signin', 'add_tag', 'collect', 'return_to_cart', 'logout', 'email_list', 'validate_email', 'send_hash_mail', 'order_query', 'is_registered', 'check_email','clear_history','qpassword_name', 'get_passwd_question', 'check_answer');
 
 /* 显示页面的action列表 */
-$ui_arr = array('register', 'login', 'profile', 'order_list', 'order_detail', 'address_list', 'collection_list',
+$ui_arr = array('register', 'login', 'profile','profilebank', 'order_list', 'order_detail', 'address_list', 'collection_list',
 'message_list', 'tag_list', 'get_password', 'reset_password', 'booking_list', 'add_booking', 'account_raply',
 'account_deposit', 'account_log', 'account_detail', 'act_account', 'pay', 'default', 'bonus', 'group_buy', 'group_buy_detail', 'affiliate', 'comment_list','validate_email','track_packages', 'transform_points','qpassword_name', 'get_passwd_question', 'check_answer');
 
@@ -482,7 +482,49 @@ elseif ($action == 'profile')
     $smarty->assign('profile', $user_info);
     $smarty->display('user_transaction.dwt');
 }
+/* 个人银行卡资料页面 */
+elseif ($action == 'profilebank')
+{
+    include_once(ROOT_PATH . 'includes/lib_transaction.php');
 
+    $user_info = get_profile($user_id);
+
+    /* 取出注册扩展字段 */
+    $sql = 'SELECT * FROM ' . $ecs->table('reg_fields') . ' WHERE type < 2 AND display = 1 ORDER BY dis_order, id';
+    $extend_info_list = $db->getAll($sql);
+
+    $sql = 'SELECT reg_field_id, content ' .
+           'FROM ' . $ecs->table('reg_extend_info') .
+           " WHERE user_id = $user_id";
+    $extend_info_arr = $db->getAll($sql);
+
+    $temp_arr = array();
+    foreach ($extend_info_arr AS $val)
+    {
+        $temp_arr[$val['reg_field_id']] = $val['content'];
+    }
+
+    foreach ($extend_info_list AS $key => $val)
+    {
+        switch ($val['id'])
+        {
+            case 1:     $extend_info_list[$key]['content'] = $user_info['msn']; break;
+            case 2:     $extend_info_list[$key]['content'] = $user_info['qq']; break;
+            case 3:     $extend_info_list[$key]['content'] = $user_info['office_phone']; break;
+            case 4:     $extend_info_list[$key]['content'] = $user_info['home_phone']; break;
+            case 5:     $extend_info_list[$key]['content'] = $user_info['mobile_phone']; break;
+            default:    $extend_info_list[$key]['content'] = empty($temp_arr[$val['id']]) ? '' : $temp_arr[$val['id']] ;
+        }
+    }
+
+    $smarty->assign('extend_info_list', $extend_info_list);
+
+    /* 密码提示问题 */
+    $smarty->assign('passwd_questions', $_LANG['passwd_questions']);
+
+    $smarty->assign('profile', $user_info);
+    $smarty->display('user_transaction.dwt');
+}
 /* 修改个人资料的处理 */
 elseif ($action == 'act_edit_profile')
 {
@@ -566,7 +608,12 @@ elseif ($action == 'act_edit_profile')
 
     if (edit_profile($profile))
     {
-        show_message($_LANG['edit_profile_success'], $_LANG['profile_lnk'], 'user.php?act=profile', 'info');
+        if($_POST['actbank']=='1'){
+                show_message('修改银行卡资料成功', '返回银行卡资料', 'user.php?act=profilebank', 'info');
+        } else {
+              show_message($_LANG['edit_profile_success'], $_LANG['profile_lnk'], 'user.php?act=profile', 'info');
+        }
+      
     }
     else
     {

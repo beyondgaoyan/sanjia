@@ -100,19 +100,21 @@ class ips
         $strcert    = $payment['ips_key'];
         $strcontent = $billno . $amount . $datestr . 'RMB' . $strcert; // 签名验证串 //
         $signmd5    = MD5($strcontent);
-
+$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 'https://' : 'http://';
         $def_url  = '<br /><form style="text-align:center;" action="https://pay.ips.com.cn/ipayment.aspx" method="post" target="_blank">';
         $def_url .= "<input type='hidden' name='Mer_code' value='" . $mer_code . "'>\n";
         $def_url .= "<input type='hidden' name='Billno' value='" . $billno . "'>\n";
+        $def_url .= "<input type='hidden' name='Amount'  value='" . $amount . "'>\n";
+        $def_url .= "<input type='hidden' name='Date'  value='" . $datestr . "'>\n";
         $def_url .= "<input type='hidden' name='Gateway_type' value='" . $payment['ips_currency'] . "'>\n";
         $def_url .= "<input type='hidden' name='Currency_Type'  value='RMB'>\n";
         $def_url .= "<input type='hidden' name='Lang'  value='" . $payment['ips_lang'] . "'>\n";
-        $def_url .= "<input type='hidden' name='Amount'  value='" . $amount . "'>\n";
-        $def_url .= "<input type='hidden' name='Date' value='" . $datestr . "'>\n";
+         $def_url .= "<input type='hidden' name='Merchanturl' value='" . return_url(basename(__FILE__, '.php')) . "'>\n";
         $def_url .= "<input type='hidden' name='DispAmount' value='" . $amount . "'>\n";
         $def_url .= "<input type='hidden' name='OrderEncodeType' value='2'>\n";
         $def_url .= "<input type='hidden' name='RetEncodeType' value='12'>\n";
-        $def_url .= "<input type='hidden' name='Merchanturl' value='" . return_url(basename(__FILE__, '.php')) . "'>\n";
+        $def_url .= "<input type='hidden' name='ServerUrl' value='".$url."'>\n";
+        $def_url .= "<input type='hidden' name='Rettype' value='0'>\n";
         $def_url .= "<input type='hidden' name='SignMD5' value='" . $signmd5 . "'>\n";
         $def_url .= "<input type='submit' value='" . $GLOBALS['_LANG']['pay_button'] . "'>";
         $def_url .= "</form><br />";

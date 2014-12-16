@@ -1,0 +1,53 @@
+
+<!-- saved from url=(0039)http://www.evcfx.com/test2014/index.asp -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<meta http-equiv="pragma" content="no-cache">   
+<meta http-equiv="Cache-Control" content="no-cache,   must-revalidate">   
+<meta http-equiv="expires" content="Wed,   26   Feb   1997   08:21:57   GMT"> 
+
+  
+<script src="jquery.js" type="text/javascript"></script>
+<script language="javascript">
+function GetReadCsv(){ 
+var changeUrl = "readCsv.asp?t= + new Date().getTime()"; 
+$.get(changeUrl,function(str){
+$("#CsvInfo").html(str);  
+})
+}
+//每一秒读取一次后台数据
+setInterval("GetReadCsv()", 1000);
+</script>
+<style type="text/css">
+body,td,th {
+	font-size: 12px;
+	color: #333;
+	font-family: Verdana, Geneva, sans-serif;
+}
+body {
+	background-color: #FFF;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-image: url(sjbj.jpg);
+}
+</style>
+</head><body><div style="margin-top:66px; margin-left:70px;">
+<span id="CsvInfo"> 
+
+
+ <style type="text/css">
+ body,td,th {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 10px;
+}
+ </style>
+<table width="236"><tbody><tr><td width="25" height="22">1.27582</td><td width="25" height="22">1.27608</td><td width="25" height="22">2</td><td width="25" height="22">2.9</td></tr><tr><td width="25" height="22">1.61761</td><td width="25" height="22">1.6179</td><td width="25" height="22">3</td><td width="25" height="22">3.2</td></tr><tr><td width="25" height="22">
+107.68</td><td width="25" height="22">107.706</td><td width="25" height="22">2</td><td width="25" height="22">2.9</td></tr><tr><td width="25" height="22">
+0.94909</td><td width="25" height="22">0.94931</td><td width="25" height="22">3</td><td width="25" height="22">2.5</td></tr><tr><td width="25" height="22">
+0.88796</td><td width="25" height="22">0.88821</td><td width="25" height="22">3</td><td width="25" height="22">2.8</td></tr><tr><td width="25" height="22">
+1.10948</td><td width="25" height="22">1.10974</td><td width="25" height="22">3</td><td width="25" height="22">2.9</td></tr><tr><td width="25" height="22">
+0.78859</td><td width="25" height="22">0.78885</td><td width="25" height="22">4</td><td width="25" height="22">2.9</td></tr><tr><td width="25" height="22">
+137.395</td><td width="25" height="22">137.425</td><td width="25" height="22">4</td><td width="25" height="22">3.3</td></tr><tr><td width="25" height="22">
+174.199</td><td width="25" height="22">174.244</td><td width="25" height="22">4</td><td width="25" height="22">4.8</td></tr></tbody></table></span> 
+</div></body></html>

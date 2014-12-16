@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+.dfTop{height:260px;}
+
+.focusbox{width:660px;height:258px;position:relative;overflow:hidden;float:left;}
+.focusbox ul{position:relative;}
+.focusbox li{display:none;position:absolute;width:660px;height:258px;}
+.jsNav{height:12px;width:650px;right:0;bottom:18px;position:absolute;z-index:500;overflow:hidden;text-align:right;padding:3px 10px 0 0;}
+.jsNav a{display:inline-block;margin-right:9px;font-weight:700;background:url(../images/default/jsNavBg.gif);width:10px;_height:10px;height:12px;overflow:hidden; vertical-align:middle;text-indent:-8888px;font-size:0;}
+.jsNav a.current{background-position:-10px 0;}
+
+.dfTopData{width:318px;height:249px;float:right;background:url(../images/default/topDataImg.png);
+	padding:10px 0 0 10px;}
+.dfTopData p{color:#025DA0;font-weight:700;font-size:14px;text-align:left;padding-left:164px;line-height:22px;}
+.dfTopData p a{color:#025da0;font-family: Arial, Helvetica, sans-serif;}
+.dataTexts{height:36px;line-height:36px;overflow:hidden;}
+/*.sp_c {margin:0px 22px;DISPLAY: inline; FLOAT: left;}*/
+.sp_c{padding-right:20px;}
+#div5{ width:980px; overflow:hidden;}
+.sp_c strong {COLOR: #bca987}
+.dfCenBox{}
+.dfCenLeft{float:left;width:660px; overflow:hidden;}
+.dfCenRig{float:right;width:328px; overflow:hidden}
+
+.dfCenLtit,.dfCenRtit{height:48px;background:url(../images/default/dfCenLtit.png);color:#fff;padding-left:26px;font-size:16px;font-weight:700;line-height:40px;font-family:Microsoft YaHei;}
+.dfCenRtit{background:url(../images/default/dfCenRtit.png);}
+.dfCenLbox{height:1188px;background:url(../images/default/dfCenLBg.png);}
+.dfCenLbox li{padding:16px 24px 0 26px;}
+.dclimg{float:left;width:254px;}
+.dcrtx{float:right;width:342px;}
+.dcrtx h2{height:42px;}
+.dcrtx h2 a{color:#015D9F;font-size:16px;font-family:Calibri;font-weight:700;}
+.dcrtx p{font-size:14px; line-height:22px; font-family: Arial, Helvetica, sans-serif;}
+.dcrtx p a{border-bottom:#7F7F7F 2px solid;display:inline-block; margin-top:10px;}
+.dfCenLbox li.dclbot{font-size:14px;padding-top:38px;}
+
+.dfCenLbot{height:20px;background:url(../images/default/dfCenLbot.png);}
+.dfCenRbox{background:url(../images/default/dfCenRBg.png);}
+.dfCenRbot{height:20px;background:url(../images/default/dfCenRbot.png);}
+.rnewsLi{padding:0 46px 0 26px;/*height:243px;*/}
+.rnewsLi li,.rnmore{padding-top:16px;}
+.rnewsLi li h2{padding-bottom:6px;}
+.rnewsLi li h2 a,.rnmore a{color:#015D9F;font-size:14px;font-family:Calibri;border-bottom:#2775AD 0px solid;font-weight:700; letter-spacing:-1px;}
+.rnewsLi li p{line-height:21px;font-size:14px;font-family:Calibri;}
+.rnmore a{font-weight:300;text-decoration:underline;}
+
+/*.rigWtdo{height:363px;}*/
+.rigAdv{height:154px;background:url(../images/default/rigAdvImg.gif) center top no-repeat;}
+.rigShortcuts{height:292px;}
+.rigShortcuts li{padding:14px 22px 0 26px;}
+.rigShortcuts li th{width:84px;}
+.rigShortcuts li td{color:#015D9F;font-size:16px;font-family:Calibri;font-weight:700;}
+.rigShortcuts li td a{font-family:Microsoft YaHei;}
