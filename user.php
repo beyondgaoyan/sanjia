@@ -1358,6 +1358,7 @@ elseif ($action == 'affirm_received')
 /* 会员退款申请界面 */
 elseif ($action == 'account_raply')
 {
+         $smarty->assign('span_title',   "资金取出");
     $smarty->display('user_transaction.dwt');
 }
 
@@ -1371,6 +1372,8 @@ elseif ($action == 'account_deposit')
 
     $smarty->assign('payment', get_online_payment_list(false));
     $smarty->assign('order',   $account);
+    $smarty->assign('span_title',   "资金存入");
+    
     $smarty->display('user_transaction.dwt');
 }
 
@@ -1485,11 +1488,11 @@ elseif ($action == 'act_account')
     {
         /* 判断是否有足够的余额的进行退款的操作 */
         $sur_amount = get_user_surplus($user_id);
-        if ($amount > $sur_amount)
-        {
-            $content = $_LANG['surplus_amount_error'];
-            show_message($content, $_LANG['back_page_up'], '', 'info');
-        }
+        // if ($amount > $sur_amount)
+        // {
+        //     $content = $_LANG['surplus_amount_error'];
+        //     show_message($content, $_LANG['back_page_up'], '', 'info');
+        // }
 
         //插入会员账目明细
         $amount = '-'.$amount;

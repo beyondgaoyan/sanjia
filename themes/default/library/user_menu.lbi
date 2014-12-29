@@ -3,11 +3,9 @@
 <!-- <a href="user.php" {if $action eq 'default'}class="curs"{/if}> <span></span>{$lang.label_welcome}</a> -->
 <a href="user.php?act=profile"{if $action eq 'profile'}class="curs"{/if}> <span></span>{$lang.label_profile}</a>
 <a href="user.php?act=profilebank"{if $action eq 'profilebank'}class="curs"{/if}> <span></span>银行卡资料</a>
-<!-- <a href="user.php?act=profilebank"{if $action eq 'profilebank'}class="curs"{/if}> <span></span>资金存入</a>
-<a href="user.php?act=profilebank"{if $action eq 'profilebank'}class="curs"{/if}> <span></span>资金取出</a> -->
+<a href="user.php?act=account_deposit"{if $action eq 'account_deposit'}class="curs"{/if}> <span></span>资金存入</a>
+<a href="user.php?act=account_raply"{if $action eq 'account_raply'}class="curs"{/if}> <span></span>资金取出</a>
 
-<a href="user.php?act=account_log"{if $action eq 'account_log'}class="curs"{/if}><span></span>{$lang.label_user_surplus}</a>
-
-
+<!-- <a href="user.php?act=account_log"{if $action eq 'account_log'}class="curs"{/if}><span></span>{$lang.label_user_surplus}</a> -->
 <a href="user.php?act=logout" style="background:none; text-align:right; margin-right:10px;"><img src="../images/bnt_sign.gif"></a>
 </div>

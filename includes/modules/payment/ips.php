@@ -100,8 +100,9 @@ class ips
         $strcert    = $payment['ips_key'];
         $strcontent = $billno . $amount . $datestr . 'RMB' . $strcert; // 签名验证串 //
         $signmd5    = MD5($strcontent);
-$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 'https://' : 'http://';
-        $def_url  = '<br /><form style="text-align:center;" action="https://pay.ips.com.cn/ipayment.aspx" method="post" target="_blank">';
+        $ips_api = "https://pay.ips.com.cn/ipayment.aspx";
+        $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ? 'https://' : 'http://';
+        $def_url  = '<br /><form style="text-align:center;" action="'.$ips_api.'" method="post" target="_blank">';
         $def_url .= "<input type='hidden' name='Mer_code' value='" . $mer_code . "'>\n";
         $def_url .= "<input type='hidden' name='Billno' value='" . $billno . "'>\n";
         $def_url .= "<input type='hidden' name='Amount'  value='" . $amount . "'>\n";

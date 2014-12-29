@@ -16,7 +16,7 @@ em,i{font-style:normal;}
 .logo{float:left;width:200px;height:101px;}
 .logo img{float:left;margin-top:30px;}
 .logo_right{float:right;width:660px;height:101px;}
-.top_list{float:right;margin-top:5px;width:300px;}
+.top_list{float:right;margin-top:5px;width:510px;}
 .top_list a{width:94px;height:24px;display:block;float:left;text-align:left;color:#fff;margin-left:6px;}
 .top_list_a1 span{background:url(../index_files/top_listbg.jpg) 6px 0 no-repeat;}
 .top_list_a2 span{background:url(../index_files/top_listbg.jpg) 6px -12px no-repeat;}
@@ -34,6 +34,7 @@ em,i{font-style:normal;}
 .top_list_a2 {background:#535353;}
 .top_list_a3 {background:#0099dc;}
 .top_list a span{width:64px;height:12px;display:block;line-height:12px;padding-left:30px;margin-bottom:6px; margin-top:6px;}
+.top_list a span.nobg{width:64px;height:12px;display:block;line-height:12px;padding-left:30px;margin-bottom:6px; margin-top:6px; background: none;}
 .index_nav{float:right;width:660px;margin-top:30px;}
 .index_nav li{float:left;width:110px;height:30px;text-align:center;position:relative;left:0px;top:0px;z-index:999;}
 .index_nav li .index_a{line-height:30px;font-size:15px;color:#666;position:absolute;left:0px;top:0px;width:110px;height:30px;}

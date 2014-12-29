@@ -16,6 +16,8 @@
         </div>
         <div class="logo_right">
                 <div class="top_list">
+                <a href="user.php?act=register" class="top_list_a1"><span class="nobg">账户注册</span></a>
+<a href="user.php" class="top_list_a1"><span class="nobg">登录</span></a>
                     <a onclick="var strHref=window.location.href;this.style.behavior='url(#default#homepage)';
 this.setHomePage('http://www.evcsfx.com');" class="top_list_a1"><span>加入收藏</span></a>
                     <a onclick="var strHref=window.location.href;this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.evcsfx.com');" href="javascript:;" class="top_list_a2"><span>设为首页</span></a>
@@ -27,82 +29,82 @@ this.setHomePage('http://www.evcsfx.com');" class="top_list_a1"><span>加入收�
                 <div class="index_nav" id="index_nav">
                     <ul>
                         <li>
-                            <a href="http://www.evcsfx.com/" class="a_index_nav index_a">首页</a>                        </li>
+                            <a href="./" class="a_index_nav index_a">首页</a>                        </li>
                         <li>
-                            <a href="http://www.evcsfx.com/about.asp?channel=1&amp;id=37" class="index_a">走进</a>
+                            <a href="article.php?id=37" class="index_a">走进我们</a>
                             <div style="display: none;" class="index_nav2">
                      
                      
-                     <a href="http://www.evcsfx.com/about.asp?channel=1&amp;id=37">为什么选择我们</a>
+                     <a href="article.php?id=36">为什么选择我们</a>
                      
                      
-                     <a href="http://www.evcsfx.com/about.asp?channel=1&amp;id=38">资金安全</a>
+                     <a href="article.php?id=37">资金安全</a>
                      
                      
-                     <a href="http://www.evcsfx.com/about.asp?channel=1&amp;id=39">我们的技术优势</a>
+                     <a href="article.php?id=38">我们的技术优势</a>
                      
                      
-                     <a href="http://www.evcsfx.com/about.asp?channel=1&amp;id=40">直通式交易经纪商</a>
+                     <a href="article.php?id=39">直通式交易经纪商</a>
                      
                      
-                     <a href="http://www.evcsfx.com/about.asp?channel=1&amp;id=294">联系我们</a>
+                     <a href="article.php?id=40">联系我们</a>
                      
                             </div>
                       </li>
                         <li>
-                           <a href="http://www.evcsfx.com/about2.asp?id=279&amp;channel=2" class="index_a">产品与交易</a>
-                            <div style="display: none;" class="index_nav2">
-                              <a href="http://www.evcsfx.com/about2.asp?id=279&amp;channel=2">交易产品</a>
-                              <a href="http://www.evcsfx.com/about2.asp?id=282&amp;channel=5">交易系统</a>
-                              <a href="http://www.evcsfx.com/about.asp?id=286&amp;channel=6" style="border-bottom:none;">交易账户</a>                            </div>
+                           <a href="article.php?id=41" class="index_a">产品与交易</a>
+                            <div style="article: none;" class="index_nav2">
+                              <a href="article.php?id=41">交易产品</a>
+                              <a href="article.php?id=44">交易系统</a>
+                              <a href="article.php?id=45" style="border-bottom:none;">交易账户</a>                            </div>
                       </li>
                         <li>
-                           <a href="http://www.evcsfx.com/account.asp" class="index_a">服务与支持</a>
+                           <a href="account.php" class="index_a">服务与支持</a>
                             <div style="display: none;" class="index_nav2">
-                              <a href="http://www.evcsfx.com/account.asp">开立账户</a>
+                              <a href="account.php">开立账户</a>
                               
                      
-                     <a href="http://www.evcsfx.com/about.asp?channel=7&amp;id=289">账户入金</a>
+                     <a href="user.php?act=account_deposit">账户入金</a>
                      
                      
-                     <a href="http://www.evcsfx.com/about.asp?channel=7&amp;id=290">常见问题</a>
+                     <a href="article.php?id=48">常见问题</a>
                      
                      
-                     <a href="http://www.evcsfx.com/about.asp?channel=7&amp;id=291">风险声明</a>
+                     <a href="article.php?id=49">风险声明</a>
                      
                      
-                     <a href="http://www.evcsfx.com/about.asp?channel=7&amp;id=292">隐私保护</a>
+                     <a href="article.php?id=50">隐私保护</a>
                      
                      
-                     <a href="http://www.evcsfx.com/about.asp?channel=7&amp;id=293">个性化服务</a>
+                     <a href="article.php?id=51">个性化服务</a>
                      
                      
-                     <a href="http://www.evcsfx.com/about.asp?channel=7&amp;id=295">取款申请书</a>
+                     <a href="user.php?act=account_raply">取款申请书</a>
                      
                             </div>
                       </li>
                         <li>
-                           <a href="http://www.evcsfx.com/newslist.asp?id=47&amp;channel=10" class="index_a">资讯中心</a>
+                           <a href="newslist.php?id=470" class="index_a">资讯中心</a>
                      
                             <div style="display: none;" class="index_nav2">
-            <a href="http://www.evcsfx.com/newslist.asp?id=47&amp;channel=10">交易资讯</a><a href="http://www.evcsfx.com/newslist.asp?id=48&amp;channel=10">财经新闻</a>
+            <a href="article_cat.php?id=41">交易资讯</a><a href="article_cat.php?id=42">财经新闻</a>
                             </div>
                       </li>
                         <li>
-                           <a href="http://www.evcsfx.com/about.asp?channel=19&amp;id=251" class="index_a">合作伙伴</a>
+                           <a href="article.php?id=52" class="index_a">合作伙伴</a>
                             <div style="display: none;" class="index_nav2">
                               
                      
-                     <a href="http://www.evcsfx.com/about.asp?channel=19&amp;id=251">如何成为合作伙伴</a>
+                     <a href="article.php?id=52">如何成为合作伙伴</a>
                      
                      
-                     <a href="http://www.evcsfx.com/about.asp?channel=19&amp;id=252">介绍经纪人(IB)</a>
+                     <a href="article.php?id=53">介绍经纪人(IB)</a>
                      
                      
-                     <a href="http://www.evcsfx.com/about.asp?channel=19&amp;id=253">资产管理人</a>
+                     <a href="article.php?id=54">资产管理人</a>
                      
                      
-                     <a href="http://www.evcsfx.com/about.asp?channel=19&amp;id=254">白标合伙人</a>
+                     <a href="article.php?id=55">白标合伙人</a>
                      
                             </div>
                       </li>
@@ -131,17 +133,17 @@ this.setHomePage('http://www.evcsfx.com');" class="top_list_a1"><span>加入收�
         <div class="banner_bottom">
          <div class="banner_bottom_left">
                     <span class="banner_bottom_title">快速链接</span>
-                    <a href="http://www.evcsfx.com/account.asp" style="background:url(index_files/middle_nav1_bg.jpg) 0 0 no-repeat;">真实账户注册</a>
-                    <a href="http://www.evcsfx.com/account_ml.asp" style="background:url(index_files/middle_nav1_bg.jpg) 0 -88px no-repeat;">模拟账户注册</a>
-                    <a href="http://www.evcsfx.com/about2.asp?id=282&amp;channel=5" style="background:url(index_files/middle_nav1_bg.jpg) 0 -176px no-repeat;">软件下载</a>
-                    <a href="http://www.evcsfx.com/about.asp?channel=1&amp;id=294" style="background:url(index_files/middle_nav1_bg.jpg) 0 -264px no-repeat;">联系我们</a>
+                    <a href="user.php" style="background:url(index_files/middle_nav1_bg.jpg) 0 0 no-repeat;">真实账户注册</a>
+                    <a href="account_ml.asp" style="background:url(index_files/middle_nav1_bg.jpg) 0 -88px no-repeat;">模拟账户注册</a>
+                    <a href="#" style="background:url(index_files/middle_nav1_bg.jpg) 0 -176px no-repeat;">软件下载</a>
+                    <a href="#" style="background:url(index_files/middle_nav1_bg.jpg) 0 -264px no-repeat;">联系我们</a>
             </div>
             <div class="banner_bottom_right">
                     <span class="banner_bottom_title">交易系统</span>
-                    <a href="http://www.evcsfx.com/about.asp?id=282&amp;channel=5" style="border-top:none;">MetaTrader4</a>
-                    <a href="http://www.evcsfx.com/about.asp?id=283&amp;channel=5" style="border-right:none;border-top:none;border-left:none;">MultiTerminal - MT4</a>
-                    <a href="http://www.evcsfx.com/about.asp?id=284&amp;channel=5" style="border-right:none;border-top:none;border-bottom:none;">J-Trader</a>
-                    <a href="http://www.evcsfx.com/about.asp?id=285&amp;channel=5" style="border-right:none;border-top:none;">CQG Trader</a>
+                    <a href="article.php?id=282&amp;channel=5" style="border-top:none;">MetaTrader4</a>
+                    <a href="article.php?id=283&amp;channel=5" style="border-right:none;border-top:none;border-left:none;">MultiTerminal - MT4</a>
+                    <a href="article.php?id=284&amp;channel=5" style="border-right:none;border-top:none;border-bottom:none;">J-Trader</a>
+                    <a href="article.php?id=285&amp;channel=5" style="border-right:none;border-top:none;">CQG Trader</a>
             </div>
         </div>
     </div>
@@ -155,22 +157,22 @@ this.setHomePage('http://www.evcsfx.com');" class="top_list_a1"><span>加入收�
          <ul style="width: 1794px; left: -897px;" id="index_lunbo_ul">
                <li style="border-top:2px solid #eb7d2a;border-bottom:1px solid #eee;">
                   <span style="color:#eb7d2a">外汇 Forex</span>
-                    <a href="http://www.evcsfx.com/about2.asp?id=279&amp;channel=2"><img src="index_files/index_lunboimg1.jpg" alt="" height="156" border="0" width="290"></a> </li>
+                    <a href="about2.asp?id=279&amp;channel=2"><img src="index_files/index_lunboimg1.jpg" alt="" height="156" border="0" width="290"></a> </li>
                <li style="border-top:2px solid #2aabe0;border-bottom:1px solid #eee;">
                   <span style="color:#2aabe0">期货 Futrues</span>
-                    <a href="http://www.evcsfx.com/about.asp?id=281&amp;channel=2"><img src="index_files/index_lunboimg2.jpg" alt="" height="156" border="0" width="290"></a> </li>
+                    <a href="article.php?id=281&amp;channel=2"><img src="index_files/index_lunboimg2.jpg" alt="" height="156" border="0" width="290"></a> </li>
                <li style="border-top:2px solid #004f9c;border-bottom:1px solid #eee;">
                   <span style="color:#004f9c">能源 Energy</span>
-                    <a href="http://www.evcsfx.com/about.asp?id=280&amp;channel=2"><img src="index_files/index_lunboimg3.jpg" alt="" height="156" border="0" width="290"></a> </li>
+                    <a href="article.php?id=280&amp;channel=2"><img src="index_files/index_lunboimg3.jpg" alt="" height="156" border="0" width="290"></a> </li>
                <li style="border-top:2px solid #eb7d2a;border-bottom:1px solid #eee;">
                   <span style="color:#eb7d2a">外汇 Forex</span>
-                    <a href="http://www.evcsfx.com/about2.asp?id=279&amp;channel=2"><img src="index_files/index_lunboimg1.jpg" alt="" height="156" border="0" width="290"></a> </li>
+                    <a href="about2.asp?id=279&amp;channel=2"><img src="index_files/index_lunboimg1.jpg" alt="" height="156" border="0" width="290"></a> </li>
                <li style="border-top:2px solid #2aabe0;border-bottom:1px solid #eee;">
                   <span style="color:#2aabe0">期货 Futrues</span>
-                    <a href="http://www.evcsfx.com/about.asp?id=281&amp;channel=2"><img src="index_files/index_lunboimg2.jpg" alt="" height="156" border="0" width="290"></a> </li>
+                    <a href="article.php?id=281&amp;channel=2"><img src="index_files/index_lunboimg2.jpg" alt="" height="156" border="0" width="290"></a> </li>
                <li style="border-top:2px solid #004f9c;border-bottom:1px solid #eee;">
                   <span style="color:#004f9c">能源 Energy</span>
-                    <a href="http://www.evcsfx.com/about.asp?id=280&amp;channel=2"><img src="index_files/index_lunboimg3.jpg" alt="" height="156" border="0" width="290"></a> </li>
+                    <a href="article.php?id=280&amp;channel=2"><img src="index_files/index_lunboimg3.jpg" alt="" height="156" border="0" width="290"></a> </li>
             </ul>
         </div>
       <span title="" id="index_next"></span>
@@ -180,28 +182,28 @@ this.setHomePage('http://www.evcsfx.com');" class="top_list_a1"><span>加入收�
    <div class="index_main">
       <div class="index_main1">
          <span>使用MT4外汇交易 享受专业金融服务</span>
-         <a href="http://www.evcsfx.com/about.asp?channel=7&amp;id=293"><img src="index_files/hezuo_img0.jpg" alt="" height="154" border="0" width="323"></a> </div>
+         <a href="article.php?channel=7&amp;id=293"><img src="index_files/hezuo_img0.jpg" alt="" height="154" border="0" width="323"></a> </div>
       <div class="index_main2">
          <p>财经新闻</p>
             <ul>
                
                <li>
-               <a href="http://www.evcsfx.com/news.asp?id=48&amp;channel=10&amp;newsid=277" target="_blank">决策分析：欧美货币政策趋于分化 美债..</a><b style="font-weight:normal;">2014-6-15</b></li>
+               <a href="news.asp?id=480&amp;newsid=277" target="_blank">决策分析：欧美货币政策趋于分化 美债..</a><b style="font-weight:normal;">2014-6-15</b></li>
                
                <li>
-               <a href="http://www.evcsfx.com/news.asp?id=48&amp;channel=10&amp;newsid=276" target="_blank">Kathy Lien：如何在低波动的..</a><b style="font-weight:normal;">2014-6-15</b></li>
+               <a href="news.asp?id=480&amp;newsid=276" target="_blank">Kathy Lien：如何在低波动的..</a><b style="font-weight:normal;">2014-6-15</b></li>
                
                <li>
-               <a href="http://www.evcsfx.com/news.asp?id=48&amp;channel=10&amp;newsid=275" target="_blank">资金链断裂引爆金属融资炸弹 套利本质..</a><b style="font-weight:normal;">2014-6-15</b></li>
+               <a href="news.asp?id=480&amp;newsid=275" target="_blank">资金链断裂引爆金属融资炸弹 套利本质..</a><b style="font-weight:normal;">2014-6-15</b></li>
                
                <li>
-               <a href="http://www.evcsfx.com/news.asp?id=48&amp;channel=10&amp;newsid=272" target="_blank">花旗银行：政策会议将至 欧央行会如何..</a><b style="font-weight:normal;">2014-6-15</b></li>
+               <a href="news.asp?id=480&amp;newsid=272" target="_blank">花旗银行：政策会议将至 欧央行会如何..</a><b style="font-weight:normal;">2014-6-15</b></li>
                
                <li>
-               <a href="http://www.evcsfx.com/news.asp?id=48&amp;channel=10&amp;newsid=271" target="_blank">法国农贷：欧元投机空头接近数月高点 ..</a><b style="font-weight:normal;">2014-6-15</b></li>
+               <a href="news.asp?id=480&amp;newsid=271" target="_blank">法国农贷：欧元投机空头接近数月高点 ..</a><b style="font-weight:normal;">2014-6-15</b></li>
                
                <li>
-               <a href="http://www.evcsfx.com/news.asp?id=48&amp;channel=10&amp;newsid=270" target="_blank">欧元自四个月低位反弹 北欧联合与瑞穗..</a><b style="font-weight:normal;">2014-6-15</b></li>
+               <a href="news.asp?id=480&amp;newsid=270" target="_blank">欧元自四个月低位反弹 北欧联合与瑞穗..</a><b style="font-weight:normal;">2014-6-15</b></li>
             
          
                
@@ -212,17 +214,17 @@ this.setHomePage('http://www.evcsfx.com');" class="top_list_a1"><span>加入收�
          <p>交易资讯</p>
             <ul>
                
-               <li><a href="http://www.evcsfx.com/news.asp?id=47&amp;channel=10&amp;newsid=278" target="_blank">美银美林：欧洲央行决议后的G10货币..</a><b style="font-weight:normal;">2014-6-15</b></li>
+               <li><a href="news.asp?id=470&amp;newsid=278" target="_blank">美银美林：欧洲央行决议后的G10货币..</a><b style="font-weight:normal;">2014-6-15</b></li>
                
-               <li><a href="http://www.evcsfx.com/news.asp?id=47&amp;channel=10&amp;newsid=266" target="_blank">BBH：美元/日元亚盘重返102 但..</a><b style="font-weight:normal;">2014-6-15</b></li>
+               <li><a href="news.asp?id=470&amp;newsid=266" target="_blank">BBH：美元/日元亚盘重返102 但..</a><b style="font-weight:normal;">2014-6-15</b></li>
                
-               <li><a href="http://www.evcsfx.com/news.asp?id=47&amp;channel=10&amp;newsid=265" target="_blank">人民币收盘涨幅收窄 后市料继续测试6..</a><b style="font-weight:normal;">2014-6-15</b></li>
+               <li><a href="news.asp?id=470&amp;newsid=265" target="_blank">人民币收盘涨幅收窄 后市料继续测试6..</a><b style="font-weight:normal;">2014-6-15</b></li>
                
-               <li><a href="http://www.evcsfx.com/news.asp?id=47&amp;channel=10&amp;newsid=264" target="_blank">资金链断裂引爆金属融资炸弹 套利本质..</a><b style="font-weight:normal;">2014-6-15</b></li>
+               <li><a href="news.asp?id=470&amp;newsid=264" target="_blank">资金链断裂引爆金属融资炸弹 套利本质..</a><b style="font-weight:normal;">2014-6-15</b></li>
                
-               <li><a href="http://www.evcsfx.com/news.asp?id=47&amp;channel=10&amp;newsid=263" target="_blank">欧银TLTRO乱象：银行拿资金套利</a><b style="font-weight:normal;">2014-6-15</b></li>
+               <li><a href="news.asp?id=470&amp;newsid=263" target="_blank">欧银TLTRO乱象：银行拿资金套利</a><b style="font-weight:normal;">2014-6-15</b></li>
                
-               <li><a href="http://www.evcsfx.com/news.asp?id=47&amp;channel=10&amp;newsid=262" target="_blank">瑞银集团：最新欧、镑、日、澳短线技术..</a><b style="font-weight:normal;">2014-6-15</b></li>
+               <li><a href="news.asp?id=470&amp;newsid=262" target="_blank">瑞银集团：最新欧、镑、日、澳短线技术..</a><b style="font-weight:normal;">2014-6-15</b></li>
                         </ul>
         </div>
     </div>
@@ -258,41 +260,41 @@ this.setHomePage('http://www.evcsfx.com');" class="top_list_a1"><span>加入收�
         <ul class="footer_ul">
          <li>
                <span>客户服务</span>
-               <a href="http://www.evcsfx.com/about.asp?channel=7&amp;id=292">直通式交易经纪商</a>
-               <a href="http://www.evcsfx.com/about.asp?channel=7&amp;id=289">账户入金</a>
-               <a href="http://www.evcsfx.com/about2.asp?id=282&amp;channel=5">交易软件下载</a>
-               <a href="http://www.evcsfx.com/about.asp?channel=19&amp;id=251">如何成为合作伙伴</a>
+               <a href="article.php?id=50">直通式交易经纪商</a>
+               <a href="user.php?act=account_deposit">账户入金</a>
+               <a href="article.php?id=44">交易软件下载</a>
+               <a href="article.php?id=52">如何成为合作伙伴</a>
             </li>
          <li>
                <span>交易软件</span>
-               <a href="http://www.evcsfx.com/about.asp?id=282&amp;channel=5">MetaTrader4</a>
-               <a href="http://www.evcsfx.com/about.asp?id=283&amp;channel=5">MultiTerminal - MT4</a>
-               <a href="http://www.evcsfx.com/about.asp?id=284&amp;channel=5">J-Trader</a>
-               <a href="http://www.evcsfx.com/about.asp?id=285&amp;channel=5">CQG Trader</a>
+               <a href="article.php?id=44">MetaTrader4</a>
+               <a href="article.php?id=44">MultiTerminal - MT4</a>
+               <a href="article.php?id=44">J-Trader</a>
+               <a href="article.php?id=44">CQG Trader</a>
                
             </li>
          <li>
                <span>走进</span>
-               <a href="http://www.evcsfx.com/about.asp?id=37&amp;channel=1">为什么选择我们</a>
-               <a href="http://www.evcsfx.com/about.asp?id=38&amp;channel=1">资金安全</a>
-               <a href="http://www.evcsfx.com/about.asp?id=39&amp;channel=1">我们的技术优势</a>
-               <a href="http://www.evcsfx.com/about.asp?id=40&amp;channel=1">直通式交易经纪商</a>
-            <a href="http://www.evcsfx.com/about.asp?id=294&amp;channel=1">联系我们</a>
+               <a href="article.php?id=36">为什么选择我们</a>
+               <a href="article.php?id=36">资金安全</a>
+               <a href="article.php?id=37">我们的技术优势</a>
+               <a href="article.php?id=38">直通式交易经纪商</a>
+            <a href="article.php?id=39">联系我们</a>
             </li>
          <li>
                <span>账户</span>
-               <a href="http://www.evcsfx.com/account.asp">开立真实账户</a>
-               <a href="http://www.evcsfx.com/account_ml.asp">开立模拟账户</a>
-            <a href="http://www.evcsfx.com/about.asp?id=286&amp;channel=6">标准账户</a>
-            <a href="http://www.evcsfx.com/about.asp?id=287&amp;channel=6">白金账户</a>
-            <a href="http://www.evcsfx.com/about.asp?id=288&amp;channel=6">期货账户</a>
+               <a href="user.php">开立真实账户</a>
+               <a href="user.php">开立模拟账户</a>
+            <a href="article.php?id=45">标准账户</a>
+            <a href="article.php?id=46">白金账户</a>
+            <a href="article.php?id=47">期货账户</a>
                
             </li>
         </ul>
     <div class="footer_logo">
-      <a href="http://www.evcsfx.com/about.asp?channel=7&amp;id=291" class="footer_logo1">风险提示</a>
-      <a href="http://www.evcsfx.com/about.asp?channel=7&amp;id=292" class="footer_logo2">隐私说明</a>
-        <a href="" class="footer_logo3"></a>
+      <a href="article.php?id=49" class="footer_logo1">风险提示</a>
+      <a href="article.php?id=50" class="footer_logo2">隐私说明</a>
+
         <a href="" class="footer_logo4"></a>
         <a href="" class="footer_logo5"></a>
         <a href="" class="footer_logo6"></a>

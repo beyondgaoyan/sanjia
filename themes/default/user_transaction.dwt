@@ -639,13 +639,13 @@
             var {$key} = "{$item}";
           {/foreach}
         </script>
-        <h5><span>{$lang.user_balance}</span></h5>
+        <h5><span>{$span_title}</span></h5>
         <div class="blank"></div>
-         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+<!--          <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
           <tr>
             <td align="right" bgcolor="#ffffff"><a href="user.php?act=account_deposit" class="f6">{$lang.surplus_type_0}</a> | <a href="user.php?act=account_raply" class="f6">{$lang.surplus_type_1}</a> | <a href="user.php?act=account_detail" class="f6">{$lang.add_surplus_log}</a> | <a href="user.php?act=account_log" class="f6">{$lang.view_application}</a> </td>
           </tr>
-        </table>
+        </table> -->
         <!-- {/if} -->
         <!-- {if $action eq "account_raply"} -->
         <form name="formSurplus" method="post" action="user.php" onSubmit="return submitSurplus()">

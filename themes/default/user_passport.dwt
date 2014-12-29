@@ -138,7 +138,7 @@
           </td>
         </tr>
         <!-- {foreach from=$extend_info_list item=field} -->
-	<!-- {if $field.id eq 6} -->
+	<!-- {if $field.id eq 6 } -->
         <tr>
           <td align="right">{$lang.passwd_question}</td>
           <td>
@@ -155,12 +155,14 @@
           </td>
         </tr>
 	<!-- {else} -->
+  <!--{if $field.is_need}-->
         <tr>
           <td align="right" <!-- {if $field.is_need} -->id="extend_field{$field.id}i"<!--{/if}-->>{$field.reg_field_name}
           <td>
           <input name="extend_field{$field.id}" type="text" size="25" class="inputBg" /><!-- {if $field.is_need} --><span style="color:#FF0000"> *</span><!-- {/if} -->
           </td>
         </tr>
+        <!--{/if}-->
 	<!-- {/if} -->
 	<!-- {/foreach} -->
       <!-- 判断是否启用验证码{if $enabled_captcha} -->
